@@ -1,0 +1,144 @@
+:root {
+  --bleu: #5A86BF;
+  --bleuciel: #7E9ABF;
+  --taupe: #A67153;
+  --marron: #A67C49;
+  --clair: #C1C9D9;
+  --blanc: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: 'Verdana', 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  background-color: #ECF1F4;
+}
+.cadre1{
+  max-width: 500px;width: 100%;margin: 2rem auto;
+}
+.bloc_blanc{
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #212529;
+  border-radius: 2rem;
+align-items: center;
+  width: 60%;
+  p{
+    text-align: -webkit-center;
+  }
+  a{
+    font-size: 1.2rem;
+  }
+  i{
+    font-size: 3rem;
+  }
+  a{
+    color: #212529;
+  }
+}
+.petit_cadre{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+
+}
+.wrap {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.container {
+  min-height: calc(100vh - 220px);
+}
+#masthead {
+  padding: 1rem 0;
+  background-color: #3B2077;
+  color: white;
+  height: 60px;
+  text-align: -webkit-center;
+
+}
+
+#colophon {
+  background-color: #3B2077;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  height: 60px;
+}
+
+#frontpage{
+  position: relative;
+  display: flex;
+}
+nav{
+  background: #212529;
+  width: 165px;
+  overflow: hidden ;
+  transition: width 0.2s linear;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+  height: 100vh;
+}
+.logo{
+  text-align: center;
+  display: flex;
+  transition: all 0.5s ease;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+.logo span{
+  font-weight: bold;
+  padding: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: white;
+  font-size: 14px;
+  display: table;
+  width: 300px;
+  padding: 10px;
+}
+.fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover{
+  background: #0D6EFD;
+  transition: 0.2s;
+}
+nav:hover{
+  width: 280px;
+  transition: all 0.5s ease;
+}
