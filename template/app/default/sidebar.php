@@ -1,4 +1,5 @@
 <?php
+
 ?>
 
 <nav>
@@ -17,21 +18,14 @@
                 <i class="fas fa-user"></i>
                 <span class="nav-item">Abonne</span>
             </a></li>
-        <li><a href="#">
+        <li><a href="<?= $view->path('produit'); ?>">
                 <i class="fas fa-wallet"></i>
-                <span class="nav-item">Wallet</span>
-            </a></li>
-        <li><a href="#">
-                <i class="fas fa-chart-bar"></i>
-                <span class="nav-item">Analytics</span>
+                <span class="nav-item">Produits</span>
             </a></li>
         <li><a href="<?= $view->path('borrows'); ?>">
-                <i class="fa-brands fa-medium"></i>
+                <i class="fas fa-chart-bar"></i>
                 <span class="nav-item">Emprunts</span>
-            </a></li>
-        <li><a href="#">
-                <i class="fas fa-chart-cog"></i>
-                <span class="nav-item">Setting</span>
             </a></li>
     </ul>
 </nav>
+

@@ -29,6 +29,8 @@
             <th>Prénom</th>
             <th>Objet emprunté</th>
             <th>Date de commencement</th>
+            <th>Email</th>
+            <th>Age</th>
         </tr>
         </thead>
         <tbody>
@@ -39,12 +41,16 @@
             $prenom = $utilisateur->getPrenom();
             $objet_emprunte = $utilisateur->getTitre();
             $date_debut = $utilisateur->getDate_start();
+            $email = $utilisateur->getEmail();
+            $age = $utilisateur->getAge();
             // affiche une ligne pour chaque objet emprunté
             echo "<tr>
                         <td>$nom</td>
                         <td>$prenom</td>
                         <td>$objet_emprunte</td>
                         <td>$date_debut</td>
+                        <td>$email</td>
+                        <td>$age</td>
                       </tr>";
         }
         ?>
