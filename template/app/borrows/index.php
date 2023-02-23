@@ -23,34 +23,34 @@
         <?php echo $form->submit('submitted'); ?>
     </form>
 
-<!--    <table>-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--            <th>Nom</th>-->
-<!--            <th>Prénom</th>-->
-<!--            <th>Objet emprunté</th>-->
-<!--            <th>Date de commencement</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--        --><?php
-//        // boucle sur les objets empruntés par l'utilisateur
-//        foreach ($utilisateurs as $utilisateur) {
-//            $nom = $utilisateur->getnom();
-//            $prenom = $utilisateur->getPrenom();
-//            $objet_emprunte = $utilisateur->getTitre();
-//            $date_debut = $utilisateur->getDate_start();
-//            // affiche une ligne pour chaque objet emprunté
-//            echo "<tr>
-//                        <td>$nom</td>
-//                        <td>$prenom</td>
-//                        <td>$objet_emprunte</td>
-//                        <td>$date_debut</td>
-//                      </tr>";
-//        }
-//        ?>
-<!--        </tbody>-->
-<!--    </table>-->
+    <table>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Objet emprunté</th>
+            <th>Date de commencement</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        // boucle sur les objets empruntés par l'utilisateur
+        foreach ($utilisateurs as $utilisateur) {
+            $nom = $utilisateur->getnom();
+            $prenom = $utilisateur->getPrenom();
+            $objet_emprunte = $utilisateur->getTitre();
+            $date_debut = $utilisateur->getDate_start();
+            // affiche une ligne pour chaque objet emprunté
+            echo "<tr>
+                        <td>$nom</td>
+                        <td>$prenom</td>
+                        <td>$objet_emprunte</td>
+                        <td>$date_debut</td>
+                      </tr>";
+        }
+        ?>
+        </tbody>
+    </table>
     </div>
 
 

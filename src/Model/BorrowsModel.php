@@ -130,20 +130,20 @@ class BorrowsModel extends BaseModel
     public static function insert($post)
     {
         App::getDatabase()->prepareInsert(
-            "INSERT INTO " . self::$table . " (id_abonne, id_product, date_start) VALUES (?, ?,NOW())",
-            array( $post['select-produits'],$post['select-abonne'])
+            "INSERT INTO " . self::$table . " (id_abonne, id_product, date_start) VALUES (?,?,NOW())",
+            array( $post['select-abonne'],$post['select-produits'])
         );
     }
-//    public static function getAllBorrowsOrderBy($column = 'date_start', $Sorder = 'ASC')
-//    {
-//        return App::getDatabase()->query("
-//        SELECT * FROM " . self::$table . "
-//        LEFT JOIN abonnes ON abonnes.id = " . self::$table . ".id_abonne
-//        LEFT JOIN products ON products.id = " . self::$table . ".id_product
-//        ORDER BY $column $Sorder",
-//            get_called_class()
-//        );
-//    }
+    public static function getAllBorrowsOrderBy($column = 'date_start', $Sorder = 'ASC')
+    {
+        return App::getDatabase()->query("
+        SELECT * FROM " . self::$table . "
+        LEFT JOIN abonnes ON abonnes.id = " . self::$table . ".id_abonne
+        LEFT JOIN products ON products.id = " . self::$table . ".id_product
+        ORDER BY $column $Sorder",
+            get_called_class()
+        );
+    }
 
 
 
