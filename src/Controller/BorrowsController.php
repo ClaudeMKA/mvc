@@ -18,15 +18,13 @@ class BorrowsController extends BaseController
         $form = new Form($errors);
         $abonnes = AbonneModel::all();
         $produits = ProduitModel::all();
-//        $utilisateurs = BorrowsModel::getAllBorrowsOrderBy();
 
         // CleanXss
         $post = $this->cleanXss($_POST);
 
         // Validation
         $v = new Validation();
-        $verifProduit = ProduitModel::findById($post['select-produits'] );
-        $this->dump($verifProduit);
+        $verifProduit = ProduitModel::findById($post['select-produits']);
         if (empty($verifProduit)){
                        $errors['select-produits'] =  'Le produit' . 'n\'existe pas dans la base de données';
         }
@@ -38,8 +36,6 @@ class BorrowsController extends BaseController
             BorrowsModel::insert($post);
              $this->redirect('borrows');
         }
-        $this->dump( $errors);
-        $this->dump( $post['select-abonne']);
         $this->render('app.borrows.index',array(
             'form'=>$form,
             'utilisateurs'=> $utilisateurs,
