@@ -1,5 +1,5 @@
 <?php
-//$view->dump($abonnes)
+$view->dump($abonnes)
 
 ?>
 <section class="listing_abonne">

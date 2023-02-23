@@ -131,4 +131,16 @@ class Form
         $html .= '</select>';
         return $html;
     }
+
+    public function selectPerso($name,array $options, $selected = null): string {
+        $html = '<select id="'.$name.'" name="'.$name.'">';
+        foreach($options as $value => $label) {
+            $isSelected = ($value === $selected) ? 'selected' : '';
+            $html .= '<option value="'.$value.'" '.$isSelected.'>'.$label.'</option>';
+        }
+        $html .= '</select>';
+        return $html;
+    }
+
+
 }

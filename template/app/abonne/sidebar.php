@@ -22,13 +22,9 @@
                 <i class="fas fa-wallet"></i>
                 <span class="nav-item">Produits</span>
             </a></li>
-        <li><a href="#">
+        <li><a href="<?= $view->path('borrows'); ?>">
                 <i class="fas fa-chart-bar"></i>
-                <span class="nav-item">Analytics</span>
-            </a></li>
-        <li><a href="#">
-                <i class="fas fa-chart-tasks"></i>
-                <span class="nav-item">Task</span>
+                <span class="nav-item">Emprunts</span>
             </a></li>
     </ul>
 </nav>

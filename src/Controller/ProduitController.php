@@ -33,10 +33,6 @@ class ProduitController extends BaseController
             $errors = $this->validate($v,$post);
             if($v->isValid($errors))  {
                 ProduitModel::insert($post);
-                $this->addFlash('success', 'Merci pour votre Inscription!');
-                // redirection
-                $this->addFlash('success', 'Merci pour avoir effacé cette recette!');
-                $this->redirect('produit');
             }
         }
         $form = new Form($errors);

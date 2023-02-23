@@ -36,7 +36,17 @@ body {
 .wrap_listing {
   max-width: 1000px;width: 100%;margin: 2rem auto;
 }
-
+.bloc_ {
+  max-width: 1000px;width: 100%;margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form.wrapform.form_select{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 .container {
   min-height: calc(100vh - 220px);
@@ -138,6 +148,7 @@ th, td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  text-align: -webkit-center;
 }
 
 th {
