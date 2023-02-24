@@ -1,7 +1,8 @@
 <?php
+$view->dump($abonnes)
 
 ?>
-
+<section class="listing_abonne">
 <nav>
     <ul>
         <li>
@@ -26,11 +27,15 @@
                 <i class="fas fa-chart-bar"></i>
                 <span class="nav-item">Emprunts</span>
             </a></li>
-
-        <li><a href="<?= $view->path('stats'); ?>">
-                <i class="fas fa-chart-bar"></i>
-                <span class="nav-item"> Stats </span>
-            </a></li>
     </ul>
 </nav>
+    <div class="bloc_stats">
+        Utilisateur inscrit
+        <i class="fa-solid fa-users"></i>
+        <p> </p>
+    </div>
+</section>
+
+
+
 

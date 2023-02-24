@@ -1,6 +1,6 @@
 <?php
 
-
+//$view->dump($utilisateurs)
 ?>
 
 <section class="listing_abonne">
@@ -31,6 +31,7 @@
             <th>Date de commencement</th>
             <th>Email</th>
             <th>Age</th>
+            <th> Donnez un date de fin </th>
         </tr>
         </thead>
         <tbody>
@@ -51,6 +52,10 @@
                         <td>$date_debut</td>
                         <td>$email</td>
                         <td>$age</td>
+                        <td>  <a class=\"btn\" onclick=\"return confirm('Voulez-vous confirmer ?')\" href=\"" . $view->path('end', array('id' => $utilisateur->id)) . "\">Fin</a></td>
+  
+                       
+</td>
                       </tr>";
         }
         ?>

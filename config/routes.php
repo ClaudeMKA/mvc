@@ -16,6 +16,9 @@ $routes = array(
     array('delete-produit','produit','delete', array('id')),
     /* Emprunt  */
     array('borrows', 'borrows','index'),
+    /*  Route */
+    array('stats', 'borrows','stats'),
+    array('end', 'borrows','end',array('id')),
 
 );
 

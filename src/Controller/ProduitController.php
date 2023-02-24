@@ -33,6 +33,9 @@ class ProduitController extends BaseController
             $errors = $this->validate($v,$post);
             if($v->isValid($errors))  {
                 ProduitModel::insert($post);
+                $this->addFlash('success', 'Merci pour l\'ajout de votre produit!');
+                // redirection
+                $this->redirect('produit');
             }
         }
         $form = new Form($errors);

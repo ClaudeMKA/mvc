@@ -80,7 +80,7 @@ class AbonneModel extends BaseModel
         );
     }
 
-
+    
     public static function update($id,$post)
     {
         App::getDatabase()->prepareInsert(

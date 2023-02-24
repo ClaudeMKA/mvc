@@ -134,17 +134,34 @@ class BorrowsModel extends BaseModel
             array( $post['select-abonne'],$post['select-produits'])
         );
     }
-    public static function getAllBorrowsOrderBy($column = 'date_start', $Sorder = 'ASC')
+
+    public static function getAllBorrowsOrderBy($column = 'date_end', $Sorder = 'ASC')
     {
         return App::getDatabase()->query("
-        SELECT * FROM " . self::$table . "
-        LEFT JOIN abonnes ON abonnes.id = " . self::$table . ".id_abonne
-        LEFT JOIN products ON products.id = " . self::$table . ".id_product
+        SELECT b.id, b.date_start, a.email, a.nom, a.prenom, a.age, p.titre 
+        FROM " . self::$table . " AS b
+        LEFT JOIN abonnes AS a ON a.id = b.id_abonne
+        LEFT JOIN products AS p ON p.id = b.id_product
+        WHERE b.date_end IS NULL
         ORDER BY $column $Sorder",
             get_called_class()
         );
     }
 
+
+
+    public static function updateendDate($id)
+    {
+        App::getDatabase()->prepareInsert(
+            "UPDATE " . self::$table . " SET date_end = NOW() WHERE id = ?",
+            array($id)
+        );
+    }
+
+    public static function findById($id,$columId = 'id')
+    {
+        return App::getDatabase()->prepare("SELECT * FROM  borrows WHERE ".$columId." = ?",[$id],get_called_class());
+    }
 
 
 

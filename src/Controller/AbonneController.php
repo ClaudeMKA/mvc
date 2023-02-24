@@ -35,6 +35,7 @@ class AbonneController extends BaseController
                 AbonneModel::insert($post);
                 $this->addFlash('success', 'Merci pour votre Inscription!');
                 // redirection
+                $this->redirect('abonne');
             }
         }
         $form = new Form($errors);
@@ -124,6 +125,8 @@ class AbonneController extends BaseController
         }
         return $abonne;
     }
+
+
 
 
 
