@@ -1,26 +1,20 @@
 <?php
 
+
 ?>
 
 <section class="listing_abonne">
     <?php include ('sidebar.php');?>
 
-    <div class="bloc_">
-    <form action="" method="post" novalidate class="wrapform form_select" onsubmit="return confirm('Voulez-vous confirmer ?');">
+    <?php
+    if (!$utilisateurs) {
+        echo "Cet utilisateur n'a pas emprunté d'objets.";
+    } else {
+        // votre code pour afficher les informations de l'utilisateur
 
-        <?php echo $form->label('Le produit empruntés'); ?>
-        <?php echo $form->selectEntity('select-produits', $produits, 'titre'); ?>
 
-        <?php echo $form->error('select-produits'); ?>
-
-        <?php echo $form->label('L\'abonné'); ?>
-        <?php echo $form->selectEntity('select-abonne', $abonnes, 'nom'); ?>
-
-        <?php echo $form->error('select-abonne'); ?>
-
-        <?php echo $form->submit('submitted'); ?>
-    </form>
-
+    ?>
+  <div class="bloc_">
     <table>
         <thead>
         <tr>
@@ -60,9 +54,5 @@
         ?>
         </tbody>
     </table>
-    </div>
-
-
-
-
-</section>
+  </div>
+    <?php }

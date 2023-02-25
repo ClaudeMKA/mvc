@@ -38,7 +38,6 @@ class BorrowsController extends BaseController
                 $this->redirect('borrows');
             }
         }
-        $this->dump($errors);
 
 
         $this->render('app.borrows.index',array(
@@ -52,14 +51,17 @@ class BorrowsController extends BaseController
         ),'admin');
     }
 
-
+    // stats
     public function stats(){
-        $utilisateurs = BorrowsModel::getAllBorrowsOrderBy();
-        $produits = ProduitModel::all();
+        $utilisateurs = BorrowsModel::countEmpruntsEnCours();
+        $abonnes = BorrowsModel::countabonnesEnCours();
+        $produits = BorrowsModel::countproduitEnCours();
+        $produitsfini = BorrowsModel::countEmpruntsFini() ;
         $this->render('app.borrows.stats', array(
             'utilisateurs' => $utilisateurs,
-            'abonnes' => AbonneModel::all(),
-            'produit' => ProduitModel::all(),
+            'abonnes'=>$abonnes,
+            'produits'=> $produits,
+            'produitsfini' => $produitsfini
         ),'admin');
 
     }
@@ -73,17 +75,21 @@ class BorrowsController extends BaseController
         $this->redirect('borrows');
     }
 
+    // listing //
+    public function single($id){
+        $abonne = AbonneModel::findById($id);
+
+        $utilisateurs = BorrowsModel::getAllBorrowsID($abonne->id);
+        $this->render('app.borrows.single',array(
+           'utilisateurs' => $utilisateurs,
+        ),'admin');
+    }
 
 
 
-//    public function validate($post, $name)
-//    {
-//        $name1 = ProduitModel::findById($post['name'] );
-//        if (empty($name1)){
-//            $errors = $name. ' n\'existe pas dans la base de données';
-//        }
-//        return $errors ;
-//    }
+
+
+
 
 
 

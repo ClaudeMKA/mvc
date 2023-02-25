@@ -14,7 +14,6 @@ class AbonneController extends BaseController
 
 
         $message = 'Administrateur';
-        //$this->dump($message);
         $this->render('app.abonne.index',array(
             'message' => $message,
             'abonnes'=> AbonneModel::all(),
@@ -62,7 +61,6 @@ class AbonneController extends BaseController
         $abonnes = $this->getAbonneByIdOr404($id);
      $errors = array();
         $message = 'Administrateur';
-        //$this->dump($message);
         if (!empty($_POST['submitted'])) {
             $post = $this->cleanXss($_POST);
             // Validation

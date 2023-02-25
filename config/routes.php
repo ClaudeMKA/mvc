@@ -19,6 +19,7 @@ $routes = array(
     /*  Route */
     array('stats', 'borrows','stats'),
     array('end', 'borrows','end',array('id')),
+    array('single-borrows','borrows','single',array('id')),
 
 );
 

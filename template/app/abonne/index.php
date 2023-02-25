@@ -1,5 +1,5 @@
 <?php
-$view->dump($abonnes)
+
 
 ?>
 <section class="listing_abonne">
@@ -23,7 +23,7 @@ $view->dump($abonnes)
                 <tr>
                     <td><?php echo $abonne->prenom; ?></td>
                     <td><a class="btn" href="<?php echo $view->path('single-abonne', array('id' => $abonne->id)); ?>">Détails</a>
-                        <a href="<?php echo $view->path('details-emprunts', array('id' => $abonne->id)); ?>">Détails des emprunts</a>
+                        <a href="<?php echo $view->path('single-borrows', array('id' => $abonne->id)); ?>">Détails des emprunts</a>
                     </td>
                     <td><a class="btn supp" onclick="return confirm('Voulez-vous effacer ?')" href="<?php echo $view->path('delete-abonne', array('id' => $abonne->id)); ?>">Effacer</a></td>
                     <td><a class="btn" href="<?php echo $view->path('edit-abonne', array('id' => $abonne->id)); ?>">Éditer</a></td>

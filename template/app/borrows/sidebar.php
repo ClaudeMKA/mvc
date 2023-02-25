@@ -26,7 +26,11 @@
                 <i class="fas fa-chart-bar"></i>
                 <span class="nav-item">Emprunts</span>
             </a></li>
+
+        <li><a href="<?= $view->path('stats'); ?>">
+                <i class="fas fa-chart-bar"></i>
+                <span class="nav-item"> Stats </span>
+            </a></li>
     </ul>
 </nav>
-
 

@@ -97,7 +97,7 @@ class BorrowsModel extends BaseModel
     /**
      * @return mixed
      */
-    public function getIdAbonne()
+    public function getId_abonne()
     {
         return $this->id_abonne;
     }
@@ -138,7 +138,7 @@ class BorrowsModel extends BaseModel
     public static function getAllBorrowsOrderBy($column = 'date_end', $Sorder = 'ASC')
     {
         return App::getDatabase()->query("
-        SELECT b.id, b.date_start, a.email, a.nom, a.prenom, a.age, p.titre 
+        SELECT b.id, b.date_start,b.id_product,b.id_abonne, a.email, a.nom, a.prenom, a.age, p.titre 
         FROM " . self::$table . " AS b
         LEFT JOIN abonnes AS a ON a.id = b.id_abonne
         LEFT JOIN products AS p ON p.id = b.id_product
@@ -147,6 +147,37 @@ class BorrowsModel extends BaseModel
             get_called_class()
         );
     }
+
+
+    public static function getAllBorrowsID($id,$column = 'date_end', $Sorder = 'ASC')
+    {
+        return App::getDatabase()->query("
+        SELECT b.id, b.date_start,b.id_product,b.id_abonne, a.email, a.nom, a.prenom, a.age, p.titre 
+        FROM " . self::$table . " AS b
+        LEFT JOIN abonnes AS a ON a.id = b.id_abonne
+        LEFT JOIN products AS p ON p.id = b.id_product
+     WHERE b.id_abonne = $id
+        ORDER BY $column $Sorder",
+            get_called_class()
+        );
+    }
+
+    public static function countEmpruntsEnCours(){
+        return App::getDatabase()->aggregation("SELECT COUNT(id) FROM " . self::getTable()." WHERE date_end IS NULL");
+    }
+
+    public static function countAbonnesEnCours(){
+        return App::getDatabase()->aggregation("SELECT COUNT(id) FROM abonnes");
+    }
+
+    public static function countproduitEnCours(){
+        return App::getDatabase()->aggregation("SELECT COUNT(id) FROM products");
+    }
+    public static function countEmpruntsFini(){
+        return App::getDatabase()->aggregation("SELECT COUNT(id) FROM " . self::getTable()." ");
+    }
+
+
 
 
 
@@ -162,6 +193,11 @@ class BorrowsModel extends BaseModel
     {
         return App::getDatabase()->prepare("SELECT * FROM  borrows WHERE ".$columId." = ?",[$id],get_called_class());
     }
+
+    public static function countEmpruntsNull(){
+        return App::getDatabase()->aggregation("SELECT COUNT(id) FROM " . self::getTable()." WHERE date_end IS !NULL");
+    }
+
 
 
 
