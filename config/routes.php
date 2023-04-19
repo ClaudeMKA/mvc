@@ -13,8 +13,7 @@ $routes = array(
     array('add-produit', 'produit','add'),
     array('edit-produit','produit','edit',['id']),
     array('single-produit','produit','single', ['id']),
-    array('delete-produit','produit','delete', array('id')),
-    /* Emprunt  */
+      /* Emprunt  */
     array('borrows', 'borrows','index'),
     /*  Route */
     array('stats', 'borrows','stats'),

@@ -20,9 +20,6 @@
         <?php echo $form->input('age','text', $abonnes->age ?? '') ;?>
         <?php echo $form->error('age'); ?>
 
-
-
-
         <?php echo $form->submit('submitted'); ?>
     </form>
 

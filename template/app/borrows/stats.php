@@ -1,5 +1,4 @@
 <?php
-$view->dump($produitsfini)
 
 ?>
 <section class="listing_abonne">
